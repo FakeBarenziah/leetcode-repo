@@ -12,8 +12,6 @@
 var sumNumbers = function(root) {
   let total = 0;
 
-  if (!root) return total;
-
   const treeTraverse = (node, path = []) => {
     const newPath = [...path];
     newPath.push(node.val);
@@ -21,6 +19,8 @@ var sumNumbers = function(root) {
     if (node.right) treeTraverse(node.right, newPath);
     if (!node.left && !node.right) total += Number(newPath.join(""));
   };
-  treeTraverse(root);
+
+  if (root) treeTraverse(root);
+
   return total;
 };

@@ -4,11 +4,17 @@
  */
 var fizzBuzz = function(n) {
   const returnVal = [];
+  const table = {
+    3: "Fizz",
+    5: "Buzz"
+  };
+  const tableIds = Object.keys(table);
   while (n > 0) {
     let thisNum = "";
-    if (n % 3 === 0) thisNum = thisNum.concat("Fizz");
-    if (n % 5 === 0) thisNum = thisNum.concat("Buzz");
-    if (n % 3 !== 0 && n % 5 !== 0) thisNum = `${n}`;
+    for (let key = 0; key < tableIds.length; key++) {
+      if (n % tableIds[key] === 0) thisNum += table[tableIds[key]];
+    }
+    if (thisNum === "") thisNum = `${n}`;
     returnVal.unshift(thisNum);
     n--;
   }

@@ -3,7 +3,6 @@
  * @return {boolean}
  */
 var lemonadeChange = function(bills) {
-  if (!bills.length) return true;
   const register = [];
 
   while (bills.length) {

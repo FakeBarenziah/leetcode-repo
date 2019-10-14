@@ -22,7 +22,7 @@ var lemonadeChange = function(bills) {
 
 /**
  * Alternate solution
- * more readable but has higher complexity
+ * more readable and less memory usage but has higher complexity
  */
 var alternateLemonadeChange = function(bills) {
   const register = { 5: 0, 10: 0 };

@@ -4,9 +4,11 @@
  */
 var lengthOfLastWord = function(s) {
   let length = 0;
-  const spaceDelimitedWords = s.split(" ").filter(each => !!each);
-  if (spaceDelimitedWords.length) {
-    length = spaceDelimitedWords[spaceDelimitedWords.length - 1].length;
+  let tail = s.length - 1;
+  while (s[tail] === " ") tail--;
+  while (s[tail] !== " " && tail >= 0) {
+    length++;
+    tail--;
   }
   return length;
 };

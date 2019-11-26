@@ -11,14 +11,7 @@
  * @return {ListNode}
  */
 var removeElements = function(head, val) {
-  if (head === null) return head;
-  const falseHead = new ListNode("dummy");
-  falseHead.next = head;
-  let pointer = falseHead;
-  while (pointer) {
-    if (pointer.next && pointer.next.val === val) {
-      pointer.next = pointer.next.next;
-    } else pointer = pointer.next;
-  }
-  return falseHead.next;
+  if (head === null) return null;
+  head.next = removeElements(head.next, val);
+  return head.val === val ? head.next : head;
 };

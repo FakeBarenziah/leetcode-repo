@@ -4,6 +4,9 @@
  * @return {string}
  */
 var getHint = function(secret, guess) {
+  if (secret.length !== guess.length)
+    return `Please make a guess of ${secret.length} digits.`;
+
   const sTable = {};
   const gTable = {};
 
